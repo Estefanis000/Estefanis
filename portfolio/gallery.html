@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería — Ortiz Estefanis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">Ortiz Estefanis</a>
+      <div>
+        <a class="cta" href="index.html">Inicio</a>
+        <a class="cta" href="gallery.html">Galería</a>
+        <a class="cta" href="merch.html">Merch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-width">
+    <section class="projects">
+      <h2>Galería — Plantillas / maquetas /estructuras </h2>
+      <div class="projects-grid" id="gallery-grid">
+        <!-- Imágenes cargadas por js.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Reuse the modal for images -->
+  <div id="image-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close>&times;</button>
+      <div id="image-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js.js"></script>
+</body>
+</html>

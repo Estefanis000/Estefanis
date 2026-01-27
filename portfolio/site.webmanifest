@@ -1,0 +1,15 @@
+{
+  "name": "Ortiz Estefanis — Portafolio",
+  "short_name": "Ortiz",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#071018",
+  "theme_color": "#00d1b2",
+  "icons": [
+    {
+      "src": "favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

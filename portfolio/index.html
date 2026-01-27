@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ortiz Estefanis — Portafolio</title>
+  <meta name="description" content="Portafolio de Ortiz Estefanis — proyectos de GitHub (teffanis)" />
+  <!-- Tipografías: uso alternativas libres similares al estilo de referencia -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo de cielo con nubes en movimiento (rosa / celeste) -->
+  <div class="page-sky" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="clouds layer1"></div>
+    <div class="clouds layer2"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">Ortiz Estefanis</a>
+      <div>
+        <a class="cta" href="gallery.html">Galería</a>
+        <a class="cta" href="merch.html">Merch</a>
+        <a class="cta" href="#contact">Contacto</a>
+      </div>
+    </nav>
+  <div class="hero" id="hero"><div class="canvas">
+        
+        <canvas class="connecting-dots"></canvas></div>
+        <div class="heading">
+        <div class="heading__line-1">Hola, Soy <span>Estefanis Ortiz </span>.</div>
+        <div class="heading__line-2">I'm a full stack web developer.</div>
+        <a href="#about" class="heading__link">
+            <div class="heading-cta">> Mis trabajos<svg class="heading__arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>arrow-right</title>
+                <path d="M11.293 5.707l5.293 5.293h-11.586c-0.552 0-1 0.448-1 1s0.448 1 1 1h11.586l-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l7-7c0.092-0.092 0.166-0.202 0.217-0.324 0.101-0.245 0.101-0.521 0-0.766-0.049-0.118-0.121-0.228-0.217-0.324l-7-7c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path></svg>
+            </div>
+        </a>
+    </div>
+</div>
+
+        <p class="hero-ctas">
+          <a class="btn-cta-shine btn-hero" href="#projects" aria-label="Ir a mis trabajos">Mis trabajos<span class="spark" aria-hidden="true"></span></a>
+        </p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <h2>Sobre mí</h2>
+      <img class="profile-img profile-img--below-heading" src="fotos/00.jpg" alt="Ortiz Estefanis" loading="lazy">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="lead"><strong>Soy una desarrolladora full stack con una profunda pasión por el conocimiento.</strong></p>
+          <div class="languages-section">
+            <ul class="about-list">
+              <li>Diseño inspirada en la creatividad pensando en la interacción del usuario y sus gustos personales. Tomando en cuenta las reglas cromáticas del color, estructuras y armonía del desarrollo. La combinación única de creatividad, lógica y tecnología impulsa mi entusiasmo y pasión. Trabajo con múltiples lenguajes, bibliotecas y frameworks.</li>
+              <li>Me encuentro totalmente comprometida con la filosofía del aprendizaje continuo. Cuando no estoy frente al ordenador, me gusta dedicar mi tiempo a leer, mantenerme en forma y tocar el violín.</li>
+              <li class="about-cta"><a class="btn-cta-shine" href="#contact" role="button" aria-label="Contactarme"> Convocatoria abierta a colaboraciones y proyectos creativos<span class="spark" aria-hidden="true"></span></a></li>
+            </ul>
+
+            <h3 class="languages-heading">Lenguajes y herramientas</h3>
+            <div class="languages-icons" id="languages-icons">
+              <!-- Icons are rendered by JS; local files in assets/langs/ preferred, CDN fallback -->
+            </div>
+            <noscript>
+              <p class="muted">Activa JavaScript para ver todos los iconos o revisa el README para instrucciones.</p>
+            </noscript>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured-section">
+      <h2>Mis proyectos</h2>
+      <div id="featured-list" class="featured-list">
+        <div class="loading">Cargando proyectos…</div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Proyectos</h2>
+      <div id="projects-list" class="projects-grid">
+        <div class="loading">Cargando proyectos desde GitHub…</div>
+      </div>
+    </section>
+
+    <!-- 'Sobre mí' movida arriba, en el hero -->
+
+    <section id="contact" class="contact">
+      <h2>Contacto</h2>
+      <p> Contame tu idea y la materializamos <a href="mailto:estefanisortiz16@gmail.com">Enviame un correo</a> o conectemos por las redes sociales:</p>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ortiz Estefanis </p>
+
+    <!-- Iconos centrados al final de la página -->
+    <div class="contact-icons footer-icons" aria-label="Medios de contacto">
+      <a class="contact-icon" href="https://www.linkedin.com/in/estefanis-ortiz-22a17434a" target="_blank" rel="noopener" aria-label="LinkedIn de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" loading="lazy">
+      </a>
+      <a class="contact-icon" href="mailto:estefanisortiz16@gmail.com" aria-label="Enviar correo a Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Correo electrónico" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://github.com/teffanis" target="_blank" rel="noopener" aria-label="GitHub de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://wa.me/541166653116" target="_blank" rel="noopener" aria-label="WhatsApp de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=77063100500a493f8f51b5b2f3ac9099" target="_blank" rel="noopener" aria-label="Pagar con Mercado Pago">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mercadopago.svg" alt="Mercado Pago" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Modal para README -->
+  <div id="readme-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body" class="modal-body">Cargando...</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
