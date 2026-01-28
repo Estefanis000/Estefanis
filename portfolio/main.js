@@ -599,3 +599,68 @@ function initFooterIconsReveal(){
   obs.observe(footer);
 }
 initFooterIconsReveal();
+
+// ============================================
+// FORMULARIO DE CONTACTO
+// ============================================
+function initContactForm() {
+  const contactForm = document.getElementById('contactForm');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validación básica
+    if (!name || !email || !message) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
+
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Por favor, ingresa un email válido.');
+      return;
+    }
+
+    // Cambiar el texto del botón mientras se procesa
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+
+    try {
+      // Enviar el correo usando Formspree o tu servicio preferido
+      const response = await fetch('https://formspree.io/f/meoqkbla', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      });
+
+      if (response.ok) {
+        alert('¡Mensaje enviado correctamente! Te contactaremos pronto.');
+        contactForm.reset();
+      } else {
+        alert('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al enviar el mensaje. Intenta de nuevo más tarde.');
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+initContactForm();

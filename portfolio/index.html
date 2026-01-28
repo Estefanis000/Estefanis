@@ -105,9 +105,28 @@
 
     <section id="contact" class="contact">
       <h2>Contacto</h2>
-      <p> Contame tu idea y la materializamos <a href="mailto:estefanisortiz16@gmail.com">Enviame un correo</a> o conectemos por las redes sociales:</p>
+      <p>Contame tu idea y la materializamos</p>
+      
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required placeholder="Tu nombre">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Comentario</label>
+          <textarea id="message" name="message" required placeholder="Cuéntame tu idea..." rows="5"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Trabajemos Juntos</button>
+      </form>
 
-
+      <p class="contact-alternative">O conectemos por las redes sociales:</p>
     </section>
   </main>
 
