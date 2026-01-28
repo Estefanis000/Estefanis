@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeTicketModal();
     initializeGallery();
-    initializeMerchStore();
+    initializeServiciosStore();
     initializeCart();
     initializeLightbox();
     initializeImageModal();

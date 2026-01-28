@@ -534,18 +534,11 @@ initReveal();
 // Render languages icons in About: tries local assets/langs/<slug>.svg first, falls back to CDN
 (function renderLanguages(){
   const list = [
-    {slug:'javascript',name:'JavaScript'}, {slug:'typescript',name:'TypeScript'}, {slug:'html5',name:'HTML5'},
-    {slug:'css3',name:'CSS3'}, {slug:'node-dot-js',name:'Node.js'}, {slug:'python',name:'Python'},
-    {slug:'react',name:'React'}, {slug:'vue-dot-js',name:'Vue.js'}, {slug:'angular',name:'Angular'},
-    {slug:'svelte',name:'Svelte'}, {slug:'nextdotjs',name:'Next.js'}, {slug:'express',name:'Express'},
-    {slug:'django',name:'Django'}, {slug:'flask',name:'Flask'}, {slug:'ruby',name:'Ruby'},
-    {slug:'rubyonrails',name:'Ruby on Rails'}, {slug:'java',name:'Java'}, {slug:'spring',name:'Spring'},
-    {slug:'go',name:'Go'}, {slug:'rust',name:'Rust'}, {slug:'csharp',name:'C#'}, {slug:'php',name:'PHP'},
-    {slug:'laravel',name:'Laravel'}, {slug:'graphql',name:'GraphQL'}, {slug:'docker',name:'Docker'},
-    {slug:'kubernetes',name:'Kubernetes'}, {slug:'amazonaws',name:'AWS'}, {slug:'git',name:'Git'},
-    {slug:'tailwindcss',name:'Tailwind CSS'}, {slug:'bootstrap',name:'Bootstrap'}, {slug:'styledcomponents',name:'styled-components'},
-    {slug:'redux',name:'Redux'}, {slug:'jest',name:'Jest'}, {slug:'webpack',name:'Webpack'}, {slug:'vite',name:'Vite'},
-    {slug:'babel',name:'Babel'}, {slug:'postgresql',name:'PostgreSQL'}, {slug:'mysql',name:'MySQL'}, {slug:'mongodb',name:'MongoDB'}
+    {slug:'javascript',name:'JavaScript'}, {slug:'typescript',name:'TypeScript'}, {slug:'python',name:'Python'},
+    {slug:'html5',name:'HTML5'}, {slug:'css3',name:'CSS3'}, {slug:'react',name:'React'}, 
+    {slug:'nextdotjs',name:'Next.js'}, {slug:'node-dot-js',name:'Node.js'}, {slug:'tailwindcss',name:'Tailwind CSS'},
+    {slug:'mongodb',name:'MongoDB'}, {slug:'postgresql',name:'PostgreSQL'}, {slug:'docker',name:'Docker'},
+    {slug:'git',name:'Git'}, {slug:'amazonaws',name:'AWS'}
   ];
   const container = document.getElementById('languages-icons');
   if(!container) return;
@@ -664,3 +657,128 @@ function initContactForm() {
 }
 
 initContactForm();
+
+// ============================================
+// BOTÓN DE PROYECTOS - ABRE 4 REPOSITORIOS
+// ============================================
+function initProyectosButton() {
+  const btnProyectos = document.getElementById('btnProyectos');
+  if (!btnProyectos) return;
+
+  const repos = [
+    'https://github.com/teffanis/Buenosairespolisemia',
+    'https://github.com/teffanis/2dapre.Tiendadelmaparas3d.Sylfhide',
+    'https://github.com/teffanis/MovimientoStudio',
+    'https://github.com/teffanis/AgustinJara.PH'
+  ];
+
+  // Si el elemento es un enlace, apuntarlo al perfil principal en GitHub
+  if (btnProyectos.tagName.toLowerCase() === 'a') {
+    btnProyectos.href = 'https://github.com/teffanis';
+    btnProyectos.target = '_blank';
+    btnProyectos.rel = 'noopener';
+  } else {
+    // Mantener compatibilidad: si es un botón, abrir el perfil en nueva pestaña
+    btnProyectos.addEventListener('click', () => {
+      window.open('https://github.com/teffanis', '_blank');
+    });
+  }
+
+  // Cargar y mostrar estos 4 repositorios destacados en la página
+  renderFeaturedSpecificRepos();
+}
+
+// Renderizar los 4 repositorios específicos con nombre y lenguaje
+async function renderFeaturedSpecificRepos() {
+  const container = document.getElementById('featuredReposGrid');
+  const repoNames = [
+    'Buenosairespolisemia',
+    '2dapre.Tiendadelmaparas3d.Sylfhide',
+    'MovimientoStudio',
+    'AgustinJara.PH'
+  ];
+
+  try {
+    const repoData = [];
+    
+    for (const repoName of repoNames) {
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${repoName}`);
+      if (res.ok) {
+        const data = await res.json();
+        repoData.push(data);
+      }
+    }
+
+    if (repoData.length === 0) {
+      return;
+    }
+
+    container.innerHTML = '';
+    
+    repoData.forEach((repo, index) => {
+      const card = document.createElement('a');
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.rel = 'noopener';
+      card.className = 'repo-item';
+      card.style.animationDelay = `${index * 80}ms`;
+
+      // Imagen miniatura: intenta cargar archivo local en assets/covers, sino fallback al avatar o Unsplash
+      const thumb = document.createElement('div');
+      thumb.className = 'repo-thumb';
+      const img = document.createElement('img');
+      const localCover = `assets/covers/${encodeURIComponent(repo.name)}.jpg`;
+      img.src = localCover;
+      img.alt = repo.name;
+      img.loading = 'lazy';
+      img.onerror = () => {
+        if (repo.owner && repo.owner.avatar_url) img.src = repo.owner.avatar_url;
+        else img.src = `https://source.unsplash.com/800x600/?code,${encodeURIComponent(repo.name)}`;
+      };
+      thumb.appendChild(img);
+      card.appendChild(thumb);
+
+      const title = document.createElement('h3');
+      title.className = 'repo-name';
+      title.textContent = repo.name;
+
+      const langHolder = document.createElement('div');
+      langHolder.className = 'repo-languages';
+
+      // fetch languages breakdown
+      (async ()=>{
+        try{
+          const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${repo.name}/languages`);
+          if(!res.ok) throw new Error('No disponibles');
+          const data = await res.json();
+          const entries = Object.entries(data);
+          if(entries.length === 0){
+            langHolder.textContent = 'Lenguajes no disponibles';
+            return;
+          }
+          entries.sort((a,b)=>b[1]-a[1]);
+          langHolder.innerHTML = '';
+          const total = entries.reduce((s,e)=>s+e[1],0);
+          entries.forEach(([lang,bytes])=>{
+            const pill = document.createElement('span');
+            pill.className = 'language-tag';
+            const pct = ((bytes/total)*100).toFixed(0);
+            pill.textContent = `${lang} (${pct}%)`;
+            langHolder.appendChild(pill);
+          });
+        }catch(e){
+          langHolder.innerHTML = '<span class="language-tag">Lenguajes no disponibles</span>';
+        }
+      })();
+
+      card.appendChild(title);
+      card.appendChild(langHolder);
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error('Error cargando repositorios destacados:', err);
+  }
+}
+
+initProyectosButton();

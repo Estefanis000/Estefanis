@@ -19,10 +19,9 @@
 
   <header class="site-header">
     <nav class="nav">
-      <a class="logo" href="index.html">Ortiz Estefanis</a>
       <div>
-        <a class="cta" href="gallery.html">Galería</a>
-        <a class="cta" href="merch.html">Merch</a>
+        <a class="cta" href="gallery.html">Proyectos</a>
+        <a class="cta" href="servicios.html">Servicios</a>
         <a class="cta" href="#contact">Contacto</a>
       </div>
     </nav>
@@ -40,9 +39,9 @@
           </div>
           <div class="subtitle">Full Stack Web Developer | Creative Coder</div>
           <div class="banner-pills">
-            <span class="pill">✨ Web Design</span>
-            <span class="pill">💻 Development</span>
-            <span class="pill">🎨 UI/UX</span>
+            <span class="pill"> Web Design</span>
+            <span class="pill"> Development</span>
+            <span class="pill"> UI/UX</span>
           </div>
         </div>
       </div>
@@ -54,7 +53,7 @@
     </div>
 
     <p class="hero-ctas">
-      <a class="btn-cta-shine btn-hero" href="#projects" aria-label="Ir a mis trabajos">Mis trabajos<span class="spark" aria-hidden="true"></span></a>
+      <a class="btn-cta-shine btn-hero" href="#contact" aria-label="Contactarme">Convocatoria abierta a colaboraciones y proyectos creativos<span class="spark" aria-hidden="true"></span></a>
     </p>
   </div>
 </section>
@@ -63,17 +62,17 @@
   <main>
     <section id="about" class="about">
       <h2>Sobre mí</h2>
-      <img class="profile-img profile-img--below-heading" src="fotos/00.jpg" alt="Ortiz Estefanis" loading="lazy">
+      <img class="profile-img profile-img--below-heading" src="fotos/sombraviolin-jpg.jpg" alt="Ortiz Estefanis" loading="lazy">
       <div class="about-inner">
         <div class="about-text">
-          <p class="lead"><strong>Soy una desarrolladora full stack con una profunda pasión por el conocimiento.</strong></p>
-          <div class="languages-section">
-            <ul class="about-list">
-              <li>Diseño inspirada en la creatividad pensando en la interacción del usuario y sus gustos personales. Tomando en cuenta las reglas cromáticas del color, estructuras y armonía del desarrollo. La combinación única de creatividad, lógica y tecnología impulsa mi entusiasmo y pasión. Trabajo con múltiples lenguajes, bibliotecas y frameworks.</li>
-              <li>Me encuentro totalmente comprometida con la filosofía del aprendizaje continuo. Cuando no estoy frente al ordenador, me gusta dedicar mi tiempo a leer, mantenerme en forma y tocar el violín.</li>
-              <li class="about-cta"><a class="btn-cta-shine" href="#contact" role="button" aria-label="Contactarme"> Convocatoria abierta a colaboraciones y proyectos creativos<span class="spark" aria-hidden="true"></span></a></li>
-            </ul>
+          <p class="lead typewriter"><strong>Soy una desarrolladora full stack con una profunda pasión por el conocimiento.</strong></p>
+          
+          <div class="bio-content">
+            <p class="bio-text typewriter">Diseño inspirada en la creatividad pensando en la interacción del usuario y sus gustos personales. Tomando en cuenta las reglas cromáticas del color, estructuras y armonía del desarrollo. La combinación única de creatividad, lógica y tecnología impulsa mi entusiasmo y pasión. Trabajo con múltiples lenguajes, bibliotecas y frameworks.</p>
+            <p class="bio-text typewriter">Me encuentro totalmente comprometida con la filosofía del aprendizaje continuo. Cuando no estoy frente al ordenador, me gusta dedicar mi tiempo a leer, mantenerme en forma y tocar el violín.</p>
+          </div>
 
+          <div class="languages-section">
             <h3 class="languages-heading">Lenguajes y herramientas</h3>
             <div class="languages-icons" id="languages-icons">
               <!-- Icons are rendered by JS; local files in assets/langs/ preferred, CDN fallback -->
@@ -87,20 +86,13 @@
       </div>
     </section>
 
-    <section id="featured" class="featured-section">
-      <h2>Mis proyectos</h2>
-      <div id="featured-list" class="featured-list">
-        <div class="loading">Cargando proyectos…</div>
+    <div class="projects-button-section">
+      <a class="btn-projects-repos" id="btnProyectos" href="https://github.com/teffanis" target="_blank" rel="noopener">Proyectos</a>
+      
+      <div class="featured-list" id="featuredReposGrid">
       </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2>Proyectos</h2>
-      <div id="projects-list" class="projects-grid">
-        <div class="loading">Cargando proyectos desde GitHub…</div>
-      </div>
-    </section>
-
+    </div>
+   
     <!-- 'Sobre mí' movida arriba, en el hero -->
 
     <section id="contact" class="contact">
