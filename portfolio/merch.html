@@ -20,18 +20,180 @@
   </header>
 
   <main class="max-width">
-    <section class="projects">
-      <h2>Merch</h2>
-      <p>Próximamente: productos inspirados en arquitectura y cielos de Buenos Aires. Aquí puedes añadir productos, imágenes y descripciones.</p>
+    <section class="services-section">
+      <h2>Servicios Web</h2>
+      <p class="section-subtitle">Catálogo de soluciones web personalizadas para tu proyecto</p>
 
-      <div class="projects-grid">
-        <!-- Ejemplo de producto -->
-        <article class="project-card">
-          <div style="height:140px;background:linear-gradient(180deg,#233,#124);border-radius:8px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;color:#fff">Mockup: Remera</div>
-          <h3 class="project-title">Remera 'Cielos Porteños'</h3>
-          <p class="project-desc">Diseño inspirado en la arquitectura y grandes cielos. Edición limitada.</p>
-          <div style="margin-top:12px"><a class="btn" href="#">Comprar</a></div>
+      <div class="services-grid">
+        <!-- Opción 1: Página Web Simple -->
+        <article class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🌐</div>
+            <h3>Página Web Simple</h3>
+          </div>
+          <div class="service-content">
+            <p class="service-desc">Sitio web limpio y moderno. Perfecto para portfolios, blogs y presentación personal.</p>
+            
+            <div class="features">
+              <h4>Incluye:</h4>
+              <ul>
+                <li>✓ Diseño responsivo</li>
+                <li>✓ Hasta 5 secciones</li>
+                <li>✓ Formulario de contacto</li>
+                <li>✓ Optimización SEO básica</li>
+                <li>✓ Hosting 1 año</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <h4>Ejemplo:</h4>
+              <div class="code-example">
+                &lt;header&gt;<br>
+                &nbsp;&nbsp;&lt;h1&gt;Mi Portafolio&lt;/h1&gt;<br>
+                &lt;/header&gt;<br>
+                &lt;section&gt;Sobre mí&lt;/section&gt;<br>
+                &lt;section&gt;Proyectos&lt;/section&gt;<br>
+                &lt;footer&gt;Contacto&lt;/footer&gt;
+              </div>
+            </div>
+
+            <div class="price">
+              <span class="price-amount">$300 USD</span>
+              <span class="price-note">Precio inicial</span>
+            </div>
+
+            <button class="btn-service">Solicitar Cotización</button>
+          </div>
         </article>
+
+        <!-- Opción 2: Página Web con Redes Sociales -->
+        <article class="service-card">
+          <div class="service-header">
+            <div class="service-icon">📱</div>
+            <h3>Página Web + Redes Sociales</h3>
+          </div>
+          <div class="service-content">
+            <p class="service-desc">Sitio web integrado con redes sociales y gestión de contenido. Ideal para pequeños negocios.</p>
+            
+            <div class="features">
+              <h4>Incluye:</h4>
+              <ul>
+                <li>✓ Todo de Página Simple +</li>
+                <li>✓ Integración Instagram/TikTok</li>
+                <li>✓ Feed de redes dinámico</li>
+                <li>✓ Botones compartir social</li>
+                <li>✓ Analytics integrado</li>
+                <li>✓ Optimización para móvil</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <h4>Ejemplo:</h4>
+              <div class="code-example">
+                &lt;section class="instagram-feed"&gt;<br>
+                &nbsp;&nbsp;&lt;img src="post1.jpg"&gt;<br>
+                &nbsp;&nbsp;&lt;img src="post2.jpg"&gt;<br>
+                &lt;/section&gt;<br>
+                &lt;button&gt;Sígueme&lt;/button&gt;
+              </div>
+            </div>
+
+            <div class="price">
+              <span class="price-amount">$600 USD</span>
+              <span class="price-note">Incluye mantenimiento 3 meses</span>
+            </div>
+
+            <button class="btn-service">Solicitar Cotización</button>
+          </div>
+        </article>
+
+        <!-- Opción 3: Página Web con Base de Datos -->
+        <article class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🗄️</div>
+            <h3>Portal Web + Base de Datos Empresarial</h3>
+          </div>
+          <div class="service-content">
+            <p class="service-desc">Aplicación web completa con sistema de gestión de datos. Ideal para empresas y tiendas online.</p>
+            
+            <div class="features">
+              <h4>Incluye:</h4>
+              <ul>
+                <li>✓ Panel de administración</li>
+                <li>✓ Base de datos segura</li>
+                <li>✓ Gestión de usuarios</li>
+                <li>✓ Sistema de pedidos/transacciones</li>
+                <li>✓ Reportes y estadísticas</li>
+                <li>✓ Encriptación de datos</li>
+                <li>✓ Soporte 6 meses</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <h4>Ejemplo:</h4>
+              <div class="code-example">
+                // Dashboard empresarial<br>
+                const db = new Database();<br>
+                db.query('SELECT * FROM pedidos');<br>
+                admin.createUser(data);<br>
+                reports.generateMonthly();
+              </div>
+            </div>
+
+            <div class="price">
+              <span class="price-amount">$1200+ USD</span>
+              <span class="price-note">Según complejidad</span>
+            </div>
+
+            <button class="btn-service">Solicitar Cotización</button>
+          </div>
+        </article>
+
+        <!-- Opción 4: Consultoría y Diseño UX/UI -->
+        <article class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🎨</div>
+            <h3>Consultoría UX/UI + Diseño</h3>
+          </div>
+          <div class="service-content">
+            <p class="service-desc">Asesoría en experiencia de usuario y diseño visual. Perfecciona tu proyecto existente.</p>
+            
+            <div class="features">
+              <h4>Incluye:</h4>
+              <ul>
+                <li>✓ Auditoría de diseño</li>
+                <li>✓ Prototipado (Figma)</li>
+                <li>✓ Wireframes y mockups</li>
+                <li>✓ Guía de estilos</li>
+                <li>✓ Recomendaciones de UX</li>
+                <li>✓ Presentación de resultados</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <h4>Ejemplo:</h4>
+              <div class="code-example">
+                📊 Análisis de usabilidad<br>
+                🎯 User personas definidos<br>
+                🖼️ Mockups de alta fidelidad<br>
+                📱 Diseño responsive optimizado
+              </div>
+            </div>
+
+            <div class="price">
+              <span class="price-amount">$400+ USD</span>
+              <span class="price-note">Por proyecto</span>
+            </div>
+
+            <button class="btn-service">Solicitar Cotización</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="contact-banner">
+        <h3>¿Tienes un proyecto en mente?</h3>
+        <p>Contactame para una consulta gratuita y cotización personalizada</p>
+        <a href="index.html#contact" class="btn-primary">Contactarme</a>
       </div>
     </section>
   </main>

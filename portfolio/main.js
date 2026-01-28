@@ -1,3 +1,128 @@
+// ============================================
+// BANNER INTERACTIVO CON PARTÍCULAS
+// ============================================
+
+class ParticleSystem {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.particles = [];
+    this.resize();
+    this.init();
+    window.addEventListener('resize', () => this.resize());
+    window.addEventListener('mousemove', (e) => this.onMouseMove(e));
+  }
+
+  resize() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  }
+
+  init() {
+    this.particles = [];
+    const particleCount = Math.min(50, Math.floor(window.innerWidth / 15));
+    for (let i = 0; i < particleCount; i++) {
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: Math.random() * this.canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        radius: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.3
+      });
+    }
+  }
+
+  onMouseMove(e) {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    
+    this.particles.forEach(particle => {
+      const dx = mouseX - particle.x;
+      const dy = mouseY - particle.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < 150) {
+        const force = (150 - distance) / 150;
+        particle.vx -= (dx / distance) * force * 0.5;
+        particle.vy -= (dy / distance) * force * 0.5;
+      }
+    });
+  }
+
+  update() {
+    this.particles.forEach(particle => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      particle.vx *= 0.99;
+      particle.vy *= 0.99;
+      particle.vy += 0.05;
+
+      if (particle.x < 0 || particle.x > this.canvas.width) {
+        particle.vx *= -1;
+        particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
+      }
+      if (particle.y < 0 || particle.y > this.canvas.height) {
+        particle.vy *= -1;
+        particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
+      }
+    });
+  }
+
+  draw() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Dibujar conexiones entre partículas
+    for (let i = 0; i < this.particles.length; i++) {
+      for (let j = i + 1; j < this.particles.length; j++) {
+        const dx = this.particles[i].x - this.particles[j].x;
+        const dy = this.particles[i].y - this.particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 120) {
+          this.ctx.strokeStyle = `rgba(230, 166, 211, ${0.3 * (1 - distance / 120)})`;
+          this.ctx.lineWidth = 1;
+          this.ctx.beginPath();
+          this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+          this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+          this.ctx.stroke();
+        }
+      }
+    }
+    
+    // Dibujar partículas
+    this.particles.forEach(particle => {
+      this.ctx.fillStyle = `rgba(230, 166, 211, ${particle.opacity})`;
+      this.ctx.beginPath();
+      this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      this.ctx.fill();
+      
+      // Glow effect
+      this.ctx.fillStyle = `rgba(255, 182, 193, ${particle.opacity * 0.5})`;
+      this.ctx.beginPath();
+      this.ctx.arc(particle.x, particle.y, particle.radius * 2, 0, Math.PI * 2);
+      this.ctx.fill();
+    });
+  }
+
+  animate() {
+    this.update();
+    this.draw();
+    requestAnimationFrame(() => this.animate());
+  }
+}
+
+// Inicializar sistema de partículas
+const particlesCanvas = document.getElementById('particlesCanvas');
+if (particlesCanvas) {
+  const particleSystem = new ParticleSystem(particlesCanvas);
+  particleSystem.animate();
+}
+
+// ============================================
+// FIN BANNER INTERACTIVO
+// ============================================
+
 const GITHUB_USER = 'teffanis';
 const projectsList = document.getElementById('projects-list');
 

@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-ortiz-estefanis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd portfolio && vite",
+    "build": "cd portfolio && vite build",
+    "preview": "cd portfolio && vite preview",
+    "fetch-icons": "cd portfolio && node tools/fetch-icons.js"
+  },
+  "devDependencies": {
+    "vite": "^5"
+  }
+}
