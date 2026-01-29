@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ortiz Estefanis — Portafolio</title>
+  <meta name="description" content="Portafolio de Ortiz Estefanis — proyectos de GitHub (teffanis)" />
+  <!-- Tipografías: uso alternativas libres similares al estilo de referencia -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/index-DtZTB2Pb.css">
+</head>
+<body>
+  <!-- Fondo de cielo con nubes en movimiento (rosa / celeste) -->
+  <div class="page-sky" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="clouds layer1"></div>
+    <div class="clouds layer2"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div>
+        <a class="cta" href="gallery.html">Proyectos</a>
+        <a class="cta" href="servicios.html">Servicios</a>
+        <a class="cta" href="#contact">Contacto</a>
+      </div>
+    </nav>
+  <div class="hero" id="hero">
+    <div class="banner-interactive">
+      <div class="banner-bg"></div>
+      <canvas class="canvas-particles" id="particlesCanvas"></canvas>
+      <div class="banner-content">
+        <div class="banner-text">
+          <div class="greeting">Hola,</div>
+          <div class="main-title">
+            <span class="word"><span class="char">S</span><span class="char">o</span><span class="char">y</span></span>
+            <span class="word highlight"><span class="char">E</span><span class="char">s</span><span class="char">t</span><span class="char">e</span><span class="char">f</span><span class="char">a</span><span class="char">n</span><span class="char">i</span><span class="char">s</span></span>
+            <span class="word"><span class="char">O</span><span class="char">r</span><span class="char">t</span><span class="char">i</span><span class="char">z</span></span>
+          </div>
+          <div class="subtitle">Full Stack Web Developer | Creative Coder</div>
+          <div class="banner-pills">
+            <span class="pill"> Web Design</span>
+            <span class="pill"> Development</span>
+            <span class="pill"> UI/UX</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+
+    <p class="hero-ctas">
+      <a class="btn-cta-shine btn-hero" href="#contact" aria-label="Contactarme">Convocatoria abierta a colaboraciones y proyectos creativos<span class="spark" aria-hidden="true"></span></a>
+    </p>
+  </div>
+</section>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <h2>Sobre mí</h2>
+      <img class="profile-img profile-img--below-heading" src="/assets/sombraviolin-jpg-CA5up-Co.jpg" alt="Ortiz Estefanis" loading="lazy">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="lead typewriter"><strong>Soy una desarrolladora full stack con una profunda pasión por el conocimiento.</strong></p>
+          
+          <div class="bio-content">
+            <p class="bio-text typewriter">Diseño inspirada en la creatividad pensando en la interacción del usuario y sus gustos personales. Tomando en cuenta las reglas cromáticas del color, estructuras y armonía del desarrollo. La combinación única de creatividad, lógica y tecnología impulsa mi entusiasmo y pasión. Trabajo con múltiples lenguajes, bibliotecas y frameworks.</p>
+            <p class="bio-text typewriter">Me encuentro totalmente comprometida con la filosofía del aprendizaje continuo. Cuando no estoy frente al ordenador, me gusta dedicar mi tiempo a leer, mantenerme en forma y tocar el violín.</p>
+          </div>
+
+          <div class="languages-section">
+            <h3 class="languages-heading">Lenguajes y herramientas</h3>
+            <div class="languages-icons" id="languages-icons">
+              <!-- Icons are rendered by JS; local files in assets/langs/ preferred, CDN fallback -->
+            </div>
+            <noscript>
+              <p class="muted">Activa JavaScript para ver todos los iconos o revisa el README para instrucciones.</p>
+            </noscript>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="projects-button-section">
+      <a class="btn-projects-repos" id="btnProyectos" href="https://github.com/teffanis" target="_blank" rel="noopener">Proyectos</a>
+      
+      <div class="featured-list" id="featuredReposGrid">
+      </div>
+    </div>
+   
+    <!-- 'Sobre mí' movida arriba, en el hero -->
+
+    <section id="contact" class="contact">
+      <h2>Contacto</h2>
+      <p>Contame tu idea y la materializamos</p>
+      
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required placeholder="Tu nombre">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Comentario</label>
+          <textarea id="message" name="message" required placeholder="Cuéntame tu idea..." rows="5"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Trabajemos Juntos</button>
+      </form>
+
+      <p class="contact-alternative">O conectemos por las redes sociales:</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ortiz Estefanis </p>
+
+    <!-- Iconos centrados al final de la página -->
+    <div class="contact-icons footer-icons" aria-label="Medios de contacto">
+      <a class="contact-icon" href="https://www.linkedin.com/in/estefanis-ortiz-22a17434a" target="_blank" rel="noopener" aria-label="LinkedIn de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" loading="lazy">
+      </a>
+      <a class="contact-icon" href="mailto:estefanisortiz16@gmail.com" aria-label="Enviar correo a Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Correo electrónico" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://github.com/teffanis" target="_blank" rel="noopener" aria-label="GitHub de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://wa.me/541166653116" target="_blank" rel="noopener" aria-label="WhatsApp de Estefanis Ortiz">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" loading="lazy">
+      </a>
+      <a class="contact-icon" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=77063100500a493f8f51b5b2f3ac9099" target="_blank" rel="noopener" aria-label="Pagar con Mercado Pago">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mercadopago.svg" alt="Mercado Pago" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Modal para README -->
+  <div id="readme-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body" class="modal-body">Cargando...</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
